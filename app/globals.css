@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* very dark greenish-black background color: #080808  */
+
 @layer base {
   :root,
   .light {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
+    --grey-1: 60 2% 10%;
+    --grey-2: 60 3% 13%;
+    --grey-3: 60 3% 13%;
+    --brand-green: 104 74% 68%;
+    --grn-1: 101 89% 4%;
+    --grn-2: 105 34% 14%;
+    --grn-neon: 101 88% 48%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -29,11 +38,21 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --radius: 0.65rem;
   }
+
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 60 3% 6%;
     --foreground: 0 0% 98%;
+    /* --grey-1: 60 2% 10%; */
+    /* --grey-2: 60 3% 13%; */
+    --grey-1: 60 3% 7%;
+    --grey-2: 60 2% 10%;
+    --grey-3: 60 3% 13%;
+    --brand-green: 104 74% 68%;
+    --grn-1: 101 89% 4%;
+    --grn-2: 105 34% 14%;
+    --grn-neon: 101 88% 48%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
@@ -60,10 +79,37 @@
 }
 
 @layer base {
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: clip;
+  }
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  ::-moz-selection {
+    color: black;
+    background: #c1c4ea;
+  }
+
+  ::selection {
+    color: black;
+    background: #c1c4ea;
   }
 }

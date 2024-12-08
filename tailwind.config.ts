@@ -1,4 +1,6 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
+
+import { fontPlugin } from "./lib/custom-tailwind-plugin"
 
 const config: Config = {
   darkMode: ["class"],
@@ -24,6 +26,13 @@ const config: Config = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "grey-1": "hsl(var(--grey-1))",
+        "grey-2": "hsl(var(--grey-2))",
+        "grey-3": "hsl(var(--grey-3))",
+        "grn-1": "hsl(var(--grn-1))",
+        "grn-2": "hsl(var(--grn-2))",
+        "grn-neon": "hsl(var(--grn-neon))",
+        "brand-green": "hsl(var(--brand-green))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -63,8 +72,22 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
       },
+      spacing: {
+        dvh: "100dvh",
+      },
+      fontFamily: {
+        inter: ["var(--font-inter)", "sans-serif"],
+        mona: ["var(--font-mona)", "sans-serif"],
+        gambarino: ["var(--font-gambarino)", "serif"],
+        red: ["var(--font-red)", "serif"],
+        redI: ["var(--font-redI)", "serif"],
+        red10: ["var(--font-red10)", "serif"],
+        red10I: ["var(--font-red10I)", "serif"],
+        red20: ["var(--font-red20)", "serif"],
+        red20I: ["var(--font-red20I)", "serif"],
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-};
-export default config;
+  plugins: [require("tailwindcss-animate"), fontPlugin],
+}
+export default config
